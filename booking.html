@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Admission & Seat Booking | The Elite Nest Student Residence</title>
+    <meta name="description" content="Book your hostel seat online at The Elite Nest Student Residence. Check real-time seat availability, submit student details, and complete payment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="booking-body">
+
+    <!-- Top Navigation Bar -->
+    <header class="booking-header">
+        <div class="booking-nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">E</span>
+                <div class="logo-text">
+                    <span class="logo-name">The Elite Nest</span>
+                    <span class="logo-tagline">Student Residence</span>
+                </div>
+            </a>
+            
+            <div class="booking-header-actions">
+                <a href="index.html" class="header-link"><i class="fas fa-home"></i> Back to Home</a>
+                <a href="member-panel.html" class="header-link panel-link"><i class="fas fa-user-shield"></i> Member Panel (Software)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Booking Section -->
+    <main class="booking-main">
+        <div class="booking-container">
+            
+            <!-- Page Title -->
+            <div class="booking-hero-header">
+                <span class="booking-badge"><i class="fas fa-shield-alt"></i> Official Admission Portal 2026</span>
+                <h1 class="booking-title">Reserve Your <span class="gold-text">Student Seat</span></h1>
+                <p class="booking-subtitle">Fast, transparent, and verified online accommodation booking with instant room allocation.</p>
+            </div>
+
+            <!-- Stepper Indicators -->
+            <div class="stepper-wrapper">
+                <div class="stepper-item active" data-step="1">
+                    <div class="stepper-circle"><i class="fas fa-bed"></i></div>
+                    <div class="stepper-label">
+                        <span class="step-num">Step 1</span>
+                        <span class="step-title">Select Room & Bed</span>
+                    </div>
+                </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-item" data-step="2">
+                    <div class="stepper-circle"><i class="fas fa-user-edit"></i></div>
+                    <div class="stepper-label">
+                        <span class="step-num">Step 2</span>
+                        <span class="step-title">Student Details</span>
+                    </div>
+                </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-item" data-step="3">
+                    <div class="stepper-circle"><i class="fas fa-credit-card"></i></div>
+                    <div class="stepper-label">
+                        <span class="step-num">Step 3</span>
+                        <span class="step-title">Fee & Payment</span>
+                    </div>
+                </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-item" data-step="4">
+                    <div class="stepper-circle"><i class="fas fa-check-circle"></i></div>
+                    <div class="stepper-label">
+                        <span class="step-num">Step 4</span>
+                        <span class="step-title">Confirmation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multi-step Form Content -->
+            <div class="booking-card">
+
+                <!-- ================= STEP 1: SELECT ROOM & SEAT ================= -->
+                <section id="step-1" class="booking-step active">
+                    <div class="step-header">
+                        <h2><i class="fas fa-door-open gold-text"></i> Choose Room Category & Available Bed</h2>
+                        <p>Real-time hostel occupancy tracking. Click on any room or available bed to select your space.</p>
+                    </div>
+
+                    <!-- Live Availability Summary Bar -->
+                    <div class="live-availability-bar">
+                        <div class="avail-stat">
+                            <span class="avail-val text-gold" id="availSingleCount">2</span>
+                            <span class="avail-name">Single Rooms Free</span>
+                        </div>
+                        <div class="avail-divider"></div>
+                        <div class="avail-stat">
+                            <span class="avail-val text-green" id="availDoubleCount">6</span>
+                            <span class="avail-name">Double Beds Free</span>
+                        </div>
+                        <div class="avail-divider"></div>
+                        <div class="avail-stat">
+                            <span class="avail-val text-blue" id="availTripleCount">10</span>
+                            <span class="avail-name">Triple/Quad Beds Free</span>
+                        </div>
+                        <div class="avail-divider"></div>
+                        <div class="avail-stat total">
+                            <span class="avail-val" id="totalAvailBeds">18</span>
+                            <span class="avail-name">Total Available Seats</span>
+                        </div>
+                    </div>
+
+                    <!-- Room Type Selector Cards -->
+                    <div class="room-selector-grid">
+                        
+                        <!-- Option 1: Single -->
+                        <div class="room-select-card active" data-type="single" data-rent="8000" data-name="Single Deluxe Room">
+                            <div class="r-badge">Premium</div>
+                            <div class="r-top">
+                                <h3>Single Deluxe Room</h3>
+                                <div class="r-price">৳8,000<span>/month</span></div>
+                            </div>
+                            <p class="r-desc">Private personal room with attached washroom, study desk & high-speed Wi-Fi.</p>
+                            <div class="r-status-badge free"><i class="fas fa-check-circle"></i> 2 Seats Available</div>
+                            <div class="r-bed-grid">
+                                <button type="button" class="bed-chip selected" data-room="Room 103" data-bed="Bed 103-A">
+                                    <i class="fas fa-bed"></i> Bed 103-A (Available)
+                                </button>
+                                <button type="button" class="bed-chip" data-room="Room 104" data-bed="Bed 104-A">
+                                    <i class="fas fa-bed"></i> Bed 104-A (Available)
+                                </button>
+                                <button type="button" class="bed-chip occupied" disabled title="Already Booked by Student">
+                                    <i class="fas fa-user-lock"></i> Bed 101-A (Booked)
+                                </button>
+                                <button type="button" class="bed-chip occupied" disabled title="Already Booked by Student">
+                                    <i class="fas fa-user-lock"></i> Bed 102-A (Booked)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Option 2: Double -->
+                        <div class="room-select-card" data-type="double" data-rent="5500" data-name="Double Sharing Room">
+                            <div class="r-badge popular">Popular Value</div>
+                            <div class="r-top">
+                                <h3>Double Sharing Room</h3>
+                                <div class="r-price">৳5,500<span>/month</span></div>
+                            </div>
+                            <p class="r-desc">Spacious twin room with 2 beds, attached bathroom, double wardrobe & balcony.</p>
+                            <div class="r-status-badge free"><i class="fas fa-check-circle"></i> 6 Seats Available</div>
+                            <div class="r-bed-grid">
+                                <button type="button" class="bed-chip" data-room="Room 202" data-bed="Bed 202-A">
+                                    <i class="fas fa-bed"></i> Bed 202-A (Free)
+                                </button>
+                                <button type="button" class="bed-chip" data-room="Room 202" data-bed="Bed 202-B">
+                                    <i class="fas fa-bed"></i> Bed 202-B (Free)
+                                </button>
+                                <button type="button" class="bed-chip" data-room="Room 203" data-bed="Bed 203-B">
+                                    <i class="fas fa-bed"></i> Bed 203-B (Free)
+                                </button>
+                                <button type="button" class="bed-chip occupied" disabled title="Already Booked">
+                                    <i class="fas fa-user-lock"></i> Bed 201-A (Booked)
+                                </button>
+                                <button type="button" class="bed-chip occupied" disabled title="Already Booked">
+                                    <i class="fas fa-user-lock"></i> Bed 201-B (Booked)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Option 3: Triple/Quad -->
+                        <div class="room-select-card" data-type="triple" data-rent="4000" data-name="Triple / Quad Sharing">
+                            <div class="r-badge budget">Affordable</div>
+                            <div class="r-top">
+                                <h3>Triple / Quad Sharing</h3>
+                                <div class="r-price">৳4,000<span>/month</span></div>
+                            </div>
+                            <p class="r-desc">Budget-friendly shared room with individual lockers, study lamps & shared facilities.</p>
+                            <div class="r-status-badge free"><i class="fas fa-check-circle"></i> 10 Seats Available</div>
+                            <div class="r-bed-grid">
+                                <button type="button" class="bed-chip" data-room="Room 301" data-bed="Bed 301-C">
+                                    <i class="fas fa-bed"></i> Bed 301-C (Free)
+                                </button>
+                                <button type="button" class="bed-chip" data-room="Room 301" data-bed="Bed 301-D">
+                                    <i class="fas fa-bed"></i> Bed 301-D (Free)
+                                </button>
+                                <button type="button" class="bed-chip" data-room="Room 302" data-bed="Bed 302-A">
+                                    <i class="fas fa-bed"></i> Bed 302-A (Free)
+                                </button>
+                                <button type="button" class="bed-chip" data-room="Room 302" data-bed="Bed 302-B">
+                                    <i class="fas fa-bed"></i> Bed 302-B (Free)
+                                </button>
+                                <button type="button" class="bed-chip occupied" disabled title="Booked">
+                                    <i class="fas fa-user-lock"></i> Bed 301-A (Booked)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selected Summary Bar -->
+                    <div class="selected-room-bar">
+                        <div class="selected-info">
+                            <span class="sel-label">Selected Bed Allocation:</span>
+                            <span class="sel-value" id="selectedBedSummary">Single Deluxe Room — Room 103 (Bed 103-A)</span>
+                        </div>
+                        <div class="selected-rate">
+                            <span class="sel-rent" id="selectedRentSummary">৳8,000 / month</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 1 Actions -->
+                    <div class="step-actions">
+                        <div></div>
+                        <button type="button" class="btn-step btn-next" onclick="goToStep(2)">
+                            Proceed to Student Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ================= STEP 2: STUDENT DETAILS FORM ================= -->
+                <section id="step-2" class="booking-step">
+                    <div class="step-header">
+                        <h2><i class="fas fa-user-graduate gold-text"></i> Student & Guardian Information</h2>
+                        <p>Fill out the official student residence application form. All fields are securely stored in the hostel database.</p>
+                    </div>
+
+                    <form id="studentRegistrationForm" class="booking-form-grid" onsubmit="event.preventDefault(); goToStep(3);">
+                        
+                        <!-- Section: Personal Info -->
+                        <div class="form-section-title">
+                            <i class="fas fa-id-card"></i> 1. Personal Information
+                        </div>
+
+                        <div class="form-field">
+                            <label>Full Student Name <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="studentName" placeholder="e.g. Shakib Al Hasan" required value="Sabbir Ahmed">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Gender <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-venus-mars"></i>
+                                <select id="studentGender" required>
+                                    <option value="Male" selected>Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Student Mobile Number <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="tel" id="studentPhone" placeholder="017XXXXXXXX" required value="01712-345678">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Email Address <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="studentEmail" placeholder="student@example.com" required value="sabbir.student@gmail.com">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Blood Group</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-tint"></i>
+                                <select id="studentBlood">
+                                    <option value="A+">A+</option>
+                                    <option value="B+" selected>B+</option>
+                                    <option value="O+">O+</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Date of Birth</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-calendar-alt"></i>
+                                <input type="date" id="studentDob" value="2003-05-15">
+                            </div>
+                        </div>
+
+                        <!-- Section: Guardian Info -->
+                        <div class="form-section-title">
+                            <i class="fas fa-users"></i> 2. Parents & Guardian Details
+                        </div>
+
+                        <div class="form-field">
+                            <label>Father's Name <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-male"></i>
+                                <input type="text" id="fatherName" placeholder="Father's full name" required value="Mohammad Nurul Islam">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Mother's Name <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-female"></i>
+                                <input type="text" id="motherName" placeholder="Mother's full name" required value="Shirin Akhter">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Guardian / Emergency Phone <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-phone-volume"></i>
+                                <input type="tel" id="guardianPhone" placeholder="018XXXXXXXX" required value="01819-223344">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Guardian Relation</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-handshake"></i>
+                                <input type="text" id="guardianRelation" placeholder="Father / Mother / Uncle" value="Father">
+                            </div>
+                        </div>
+
+                        <!-- Section: Academic Info -->
+                        <div class="form-section-title">
+                            <i class="fas fa-university"></i> 3. Academic & Institute Details
+                        </div>
+
+                        <div class="form-field">
+                            <label>College / University Name <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-graduation-cap"></i>
+                                <input type="text" id="instituteName" placeholder="e.g. BUET, Dhaka University, NSU" required value="University of Dhaka (DU)">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Department / Subject <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-book"></i>
+                                <input type="text" id="deptName" placeholder="e.g. Computer Science, Economics" required value="Software Engineering">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Student Roll / ID Number</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-id-badge"></i>
+                                <input type="text" id="studentRoll" placeholder="e.g. DU-2026-891" value="DU-SE-2026">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Semester / Academic Year</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-layer-group"></i>
+                                <input type="text" id="academicYear" placeholder="e.g. 1st Year, 2nd Semester" value="2nd Year">
+                            </div>
+                        </div>
+
+                        <!-- Section: Address -->
+                        <div class="form-section-title">
+                            <i class="fas fa-map-marked-alt"></i> 4. Permanent Address
+                        </div>
+
+                        <div class="form-field full-width">
+                            <label>Full Permanent Address (Village/Road, Post Office, Thana/Upazila, District) <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-home"></i>
+                                <textarea id="permanentAddress" rows="2" placeholder="House/Village, Post Office, Police Station, District..." required>House #12, Road #4, Shantinagar, Mymensingh Sadar, Mymensingh</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Checkbox for rules -->
+                        <div class="form-field full-width agreement-box">
+                            <label class="check-label">
+                                <input type="checkbox" id="agreeRules" checked required>
+                                <span>I certify that all information provided above is true and I agree to abide by the codes of conduct, curfew rules, and discipline policies of <strong>The Elite Nest Student Residence</strong>.</span>
+                            </label>
+                        </div>
+
+                        <!-- Step 2 Actions -->
+                        <div class="step-actions full-width">
+                            <button type="button" class="btn-step btn-prev" onclick="goToStep(1)">
+                                <i class="fas fa-arrow-left"></i> Back to Room Selection
+                            </button>
+                            <button type="submit" class="btn-step btn-next">
+                                Continue to Payment <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ================= STEP 3: PAYMENT GATEWAY ================= -->
+                <section id="step-3" class="booking-step">
+                    <div class="step-header">
+                        <h2><i class="fas fa-wallet gold-text"></i> Invoice & Payment Gateway Demo</h2>
+                        <p>Complete payment to confirm your seat reservation. You will instantly receive booking credentials and access to the Member Panel.</p>
+                    </div>
+
+                    <div class="payment-layout">
+                        <!-- Invoice Summary Column -->
+                        <div class="invoice-summary-card">
+                            <div class="invoice-header">
+                                <div class="inv-brand">
+                                    <span class="inv-logo">E</span>
+                                    <span>The Elite Nest Residence</span>
+                                </div>
+                                <span class="inv-type">Admission Voucher</span>
+                            </div>
+
+                            <div class="invoice-student-snippet">
+                                <div><strong id="invStudentName">Sabbir Ahmed</strong></div>
+                                <div class="text-muted" id="invInstitute">University of Dhaka (DU)</div>
+                                <div class="inv-pill" id="invRoomSnippet"><i class="fas fa-bed"></i> Room 103 (Bed 103-A)</div>
+                            </div>
+
+                            <div class="invoice-table">
+                                <div class="inv-row">
+                                    <span>1st Month Rent (<span id="invRoomTitle">Single Room</span>)</span>
+                                    <strong id="invRentAmount">৳8,000</strong>
+                                </div>
+                                <div class="inv-row">
+                                    <span>Security Deposit (Refundable)</span>
+                                    <strong>৳5,000</strong>
+                                </div>
+                                <div class="inv-row">
+                                    <span>Monthly Meal Fee (3 Times/Day)</span>
+                                    <div class="meal-toggle-inline">
+                                        <input type="checkbox" id="includeMealCheck" checked onchange="calculateTotalPayable()">
+                                        <label for="includeMealCheck">Include (৳3,500)</label>
+                                    </div>
+                                    <strong id="invMealAmount">৳3,500</strong>
+                                </div>
+                                <div class="inv-row">
+                                    <span>Admission & Wi-Fi Setup Fee</span>
+                                    <span class="text-green"><del class="text-muted">৳1,500</del> <strong>৳0 (Free)</strong></span>
+                                </div>
+                                <div class="inv-divider"></div>
+                                <div class="inv-row total-row">
+                                    <span>Total Payable Today:</span>
+                                    <strong class="total-price gold-text" id="invTotalAmount">৳16,500</strong>
+                                </div>
+                            </div>
+
+                            <div class="secure-badge">
+                                <i class="fas fa-lock"></i> 256-Bit SSL Encrypted & Verified Transaction
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods Column -->
+                        <div class="payment-methods-card">
+                            <h3>Select Payment Method</h3>
+                            
+                            <!-- Payment Option Tabs -->
+                            <div class="pay-tabs">
+                                <div class="pay-tab active" data-method="bkash">
+                                    <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=80&q=80" alt="bKash" class="pay-tab-icon">
+                                    <span>bKash</span>
+                                </div>
+                                <div class="pay-tab" data-method="nagad">
+                                    <span class="pay-tab-badge">Nagad</span>
+                                    <span>Nagad</span>
+                                </div>
+                                <div class="pay-tab" data-method="rocket">
+                                    <span class="pay-tab-badge rocket">Rocket</span>
+                                    <span>Rocket</span>
+                                </div>
+                                <div class="pay-tab" data-method="card">
+                                    <i class="fas fa-credit-card pay-tab-icon-fa"></i>
+                                    <span>Cards / Visa</span>
+                                </div>
+                            </div>
+
+                            <!-- bKash Panel -->
+                            <div class="pay-panel active" id="panel-bkash">
+                                <div class="gateway-instruction">
+                                    <div class="merchant-box">
+                                        <span class="m-label">Hostel bKash Merchant Number:</span>
+                                        <span class="m-num">01799-887766</span>
+                                        <button type="button" class="btn-copy" onclick="alert('Merchant number copied!')"><i class="fas fa-copy"></i> Copy</button>
+                                    </div>
+                                    <ol class="pay-steps-list">
+                                        <li>Go to your bKash Mobile App or Dial *247#</li>
+                                        <li>Choose <strong>Make Payment</strong> or Send Money</li>
+                                        <li>Enter Merchant Account <strong>01799887766</strong></li>
+                                        <li>Enter Amount: <strong id="bkashPayAmount">৳16,500</strong></li>
+                                        <li>Enter Reference: <strong>ELITENEST</strong></li>
+                                    </ol>
+                                </div>
+
+                                <div class="pay-form">
+                                    <div class="form-field">
+                                        <label>Your bKash Wallet Number <span class="req">*</span></label>
+                                        <div class="input-wrap">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <input type="tel" id="bkashWalletNum" placeholder="01XXXXXXXXX" value="01712345678">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Transaction ID (TrxID) <span class="req">*</span></label>
+                                        <div class="input-wrap">
+                                            <i class="fas fa-receipt"></i>
+                                            <input type="text" id="bkashTrxId" placeholder="e.g. BK892X78L1" value="BK892X78L1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Instant Demo Payment Button -->
+                            <div class="instant-demo-pay-box">
+                                <div class="demo-notice">
+                                    <i class="fas fa-info-circle"></i> <strong>Demo Simulator:</strong> Click below to simulate instantaneous payment verification without needing real funds.
+                                </div>
+                                <button type="button" class="btn-step btn-pay-now" id="btnPayConfirm" onclick="simulatePaymentProcess()">
+                                    <i class="fas fa-check-double"></i> Complete Payment & Confirm Seat
+                                </button>
+                            </div>
+
+                            <div class="step-actions mt-3">
+                                <button type="button" class="btn-step btn-prev" onclick="goToStep(2)">
+                                    <i class="fas fa-arrow-left"></i> Edit Student Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= STEP 4: CONFIRMATION & ACCESS ================= -->
+                <section id="step-4" class="booking-step">
+                    <div class="confirmation-success-wrap">
+                        
+                        <div class="success-icon-ring">
+                            <i class="fas fa-check"></i>
+                        </div>
+
+                        <span class="success-badge"><i class="fas fa-clock"></i> Payment Received — Awaiting Admin Approval</span>
+                        <h2 class="success-title">Application Submitted Successfully!</h2>
+                        <p class="success-subtitle">Thank you for applying to <strong>The Elite Nest Student Residence</strong>. Your payment has been received and your booking request has been sent to the hostel administrator for final verification and approval.</p>
+
+                        <!-- Digital Student Booking Voucher Card -->
+                        <div class="voucher-card">
+                            <div class="voucher-top">
+                                <div class="v-brand">
+                                    <span class="logo-icon">E</span>
+                                    <div>
+                                        <h4>The Elite Nest</h4>
+                                        <small>Student Residence</small>
+                                    </div>
+                                </div>
+                                <div class="v-status">
+                                    <span class="v-badge-paid" style="background:#f59e0b;"><i class="fas fa-hourglass-half"></i> PENDING ADMIN APPROVAL</span>
+                                </div>
+                            </div>
+
+                            <div class="voucher-grid">
+                                <div class="v-item">
+                                    <span class="v-lbl">Booking Reference ID</span>
+                                    <strong class="v-val gold-text" id="confBookingId">EN-2026-9042</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Student Name</span>
+                                    <strong class="v-val" id="confStudentName">Sabbir Ahmed</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Allocated Room & Bed</span>
+                                    <strong class="v-val text-green" id="confAllocatedBed">Room 103 — Bed 103-A</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Institute</span>
+                                    <strong class="v-val" id="confInstitute">University of Dhaka (DU)</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Total Paid Amount</span>
+                                    <strong class="v-val" id="confPaidAmount">৳16,500</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Remaining Due</span>
+                                    <strong class="v-val text-green">৳0 (Cleared)</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Payment Method & TrxID</span>
+                                    <strong class="v-val" id="confTrxSnippet">bKash (BK892X78L1)</strong>
+                                </div>
+                                <div class="v-item">
+                                    <span class="v-lbl">Check-In Date</span>
+                                    <strong class="v-val">Immediately / Next 1st of Month</strong>
+                                </div>
+                            </div>
+
+                            <div class="voucher-barcode">
+                                <div class="barcode-lines"></div>
+                                <span>* EN-2026-STUDENT-PASS-VERIFIED *</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA to Enter Member Panel Software -->
+                        <div class="confirmation-cta-actions">
+                            <a href="member-panel.html" class="btn-step btn-panel-direct">
+                                <i class="fas fa-laptop-code"></i> Enter Member Panel (Hostel Software) <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button type="button" class="btn-step btn-outline" onclick="window.print()">
+                                <i class="fas fa-print"></i> Print Admission Voucher
+                            </button>
+                            <a href="index.html" class="btn-step btn-home-link">
+                                <i class="fas fa-home"></i> Back to Homepage
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="booking-mini-footer">
+        <p>&copy; 2026 The Elite Nest Student Residence. All Rights Reserved. A Home for Future Leaders.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/hostel-data.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
