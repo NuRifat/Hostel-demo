@@ -18,7 +18,7 @@ A modern, responsive web platform and administrative hostel management software 
 - **Digital Admission Voucher**: Generates a verified digital admission pass with a unique Booking ID and check-in details.
 - **Approval Queue**: New online bookings are automatically placed in the admin verification queue.
 
-### 3. Administrator Hostel Management Software (`member-panel.html`)
+### 3. Administrator Hostel Management Software (`admin-panel.html`)
 - **Clean White Theme**: Professional, clutter-free light software design tailored for hostel authorities.
 - **Real-Time Notifications & Approval Engine**:
   - Live topbar notification bell for new admission requests.
@@ -39,7 +39,8 @@ A modern, responsive web platform and administrative hostel management software 
 Student_Hostel/
 ├── index.html           # Main Hostel Website
 ├── booking.html         # Online Seat Booking & Admission Flow
-├── member-panel.html    # Administrative Management Software
+├── admin-panel.html     # Administrative Management Software (Admin Panel)
+├── member-panel.html    # Legacy Redirect to Admin Panel
 ├── README.md            # Project Documentation
 ├── css/
 │   ├── style.css        # Main Website Styles (Luxury Theme)
@@ -65,7 +66,7 @@ Student_Hostel/
    ```
 2. Open `index.html` in any modern web browser to view the homepage.
 3. Click **"Book Now"** to test the admission flow.
-4. Click **"Member Panel"** to access the administrator software.
+4. Click **"Admin Panel"** to access the administrator software.
 
 ---
 

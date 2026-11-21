@@ -44,6 +44,7 @@
                     </div>
                 </a>
 
+                <!-- Desktop Navigation Links -->
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -52,20 +53,38 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li class="mobile-only"><a href="member-panel.html" class="mobile-nav-btn"><i class="fas fa-user-circle"></i> Member Panel</a></li>
-                    <li class="mobile-only"><a href="booking.html" class="mobile-nav-btn gold"><i class="fas fa-calendar-check"></i> Book Now</a></li>
                 </ul>
 
+                <!-- Desktop Action Buttons -->
                 <div class="nav-buttons">
-                    <a href="member-panel.html" class="nav-btn nav-btn-outline"><i class="fas fa-user-circle"></i> Member Panel</a>
+                    <a href="admin-panel.html" class="nav-btn nav-btn-outline"><i class="fas fa-shield-halved"></i> Admin Panel</a>
                     <a href="booking.html" class="nav-btn nav-btn-filled"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
 
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <!-- Responsive Hamburger Toggle -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+            </div>
+
+            <!-- Mobile & Tablet Responsive Dropdown Menu -->
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <ul class="mobile-dropdown-links">
+                    <li><a href="#home" class="mobile-drop-link active"><i class="fas fa-house"></i> <span>Home</span></a></li>
+                    <li><a href="#about" class="mobile-drop-link"><i class="fas fa-circle-info"></i> <span>About Us</span></a></li>
+                    <li><a href="#rooms" class="mobile-drop-link"><i class="fas fa-bed"></i> <span>Room Packages</span></a></li>
+                    <li><a href="#services" class="mobile-drop-link"><i class="fas fa-concierge-bell"></i> <span>Services & Facilities</span></a></li>
+                    <li><a href="#gallery" class="mobile-drop-link"><i class="fas fa-images"></i> <span>Gallery</span></a></li>
+                    <li><a href="#testimonials" class="mobile-drop-link"><i class="fas fa-comments"></i> <span>Reviews</span></a></li>
+                    <li><a href="#contact" class="mobile-drop-link"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+                </ul>
+                <div class="mobile-dropdown-divider"></div>
+                <div class="mobile-dropdown-actions">
+                    <a href="admin-panel.html" class="mobile-drop-btn admin-btn"><i class="fas fa-shield-halved"></i> Admin Panel</a>
+                    <a href="booking.html" class="mobile-drop-btn book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+                </div>
             </div>
         </nav>
     </header>

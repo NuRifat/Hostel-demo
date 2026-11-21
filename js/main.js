@@ -41,26 +41,60 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ==================== HAMBURGER MENU ====================
+    // ==================== RESPONSIVE DROPDOWN MENU ====================
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+    const dropItems = document.querySelectorAll('.mobile-drop-link, .mobile-drop-btn');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+    if (hamburger && mobileDropdown) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = hamburger.classList.toggle('active');
+            mobileDropdown.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
-    });
+
+        // Close dropdown when any item inside is clicked
+        dropItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileDropdown.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (header && !header.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileDropdown.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDropdown.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileDropdown.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Auto close on window resize past 992px
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && mobileDropdown.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileDropdown.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 
     // ==================== ACTIVE NAV LINK ON SCROLL ====================
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-links a');
+    const dropNavItems = document.querySelectorAll('.mobile-drop-link');
 
     function updateActiveNav() {
         const scrollY = window.scrollY + 100;
@@ -72,6 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${sectionId}`) {
+                        item.classList.add('active');
+                    }
+                });
+
+                dropNavItems.forEach(item => {
                     item.classList.remove('active');
                     if (item.getAttribute('href') === `#${sectionId}`) {
                         item.classList.add('active');
