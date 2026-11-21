@@ -401,10 +401,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ==================== SMOOTH SCROLL FOR ALL ANCHOR LINKS ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetEl = document.querySelector(targetId);
             if (targetEl) {
                 e.preventDefault();

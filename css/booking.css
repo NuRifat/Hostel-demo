@@ -1087,29 +1087,397 @@
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .payment-layout {
-        grid-template-columns: 1fr;
+/* ========================================================
+   RESPONSIVE DESIGN ADAPTATIONS FOR BOOKING PORTAL
+   ======================================================== */
+
+/* ---------- Tablet & Medium Devices (max-width: 992px) ---------- */
+@media (max-width: 992px) {
+    .booking-container {
+        max-width: 100%;
     }
+
     .room-selector-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
     }
+
+    .payment-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .booking-card {
+        padding: 30px 24px;
+    }
+}
+
+/* ---------- Mobile & Small Tablets (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+    /* Navbar */
+    .booking-nav-container {
+        padding: 12px 18px;
+    }
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .logo-name {
+        font-size: 17px;
+    }
+
+    .logo-tagline {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .booking-header-actions {
+        gap: 8px;
+    }
+
+    .header-link {
+        padding: 7px 13px;
+        font-size: 12.5px;
+        gap: 6px;
+    }
+
+    /* Hero Header */
+    .booking-main {
+        padding: 25px 14px 60px;
+    }
+
+    .booking-hero-header {
+        margin-bottom: 25px;
+    }
+
+    .booking-title {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .booking-subtitle {
+        font-size: 14px;
+    }
+
+    .booking-badge {
+        font-size: 10.5px;
+        padding: 5px 14px;
+        letter-spacing: 1px;
+    }
+
+    /* Stepper Component */
     .stepper-wrapper {
-        overflow-x: auto;
-        padding: 15px 20px;
+        padding: 12px 14px;
+        margin-bottom: 25px;
+        border-radius: 12px;
     }
+
+    .stepper-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
     .step-title {
         display: none;
     }
-    .booking-card {
-        padding: 25px 20px;
+
+    .step-num {
+        font-size: 9.5px;
     }
+
+    .stepper-line {
+        margin: 0 8px;
+    }
+
+    /* Card Frame */
+    .booking-card {
+        padding: 22px 16px;
+        border-radius: 16px;
+    }
+
+    .step-header {
+        margin-bottom: 22px;
+        padding-bottom: 14px;
+    }
+
+    .step-header h2 {
+        font-size: 21px;
+        gap: 8px;
+    }
+
+    .step-header p {
+        font-size: 13px;
+    }
+
+    /* Step 1: Availability & Rooms */
+    .live-availability-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 12px 10px;
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .avail-divider {
+        display: none;
+    }
+
+    .avail-val {
+        font-size: 20px;
+    }
+
+    .avail-name {
+        font-size: 10.5px;
+    }
+
+    .room-select-card {
+        padding: 18px 16px;
+    }
+
+    .r-bed-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 8px;
+    }
+
+    .bed-chip {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .selected-room-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 16px;
+    }
+
+    .sel-value {
+        font-size: 14.5px;
+    }
+
+    .sel-rent {
+        font-size: 18px;
+    }
+
+    /* Step 2: Form Fillup Responsive */
     .booking-form-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
+
+    .form-section-title {
+        font-size: 16px;
+        padding: 8px 0;
+        margin-top: 12px;
+    }
+
+    .form-field label {
+        font-size: 12.5px;
+    }
+
+    .input-wrap input,
+    .input-wrap select,
+    .input-wrap textarea {
+        font-size: 15px;
+        padding: 12px 14px 12px 38px;
+        border-radius: 8px;
+        min-height: 46px;
+    }
+
+    .input-wrap i {
+        left: 12px;
+        font-size: 13px;
+    }
+
+    .agreement-box {
+        padding: 12px 14px;
+    }
+
+    .check-label {
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .check-label input {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    /* Common Step Action Buttons on Mobile */
+    .step-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .btn-step {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 13px 20px;
+        font-size: 14.5px;
+    }
+
+    /* Step 3: Payment Responsive */
+    .invoice-summary-card,
+    .payment-methods-card {
+        padding: 18px 15px;
+        border-radius: 14px;
+    }
+
+    .pay-tabs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .pay-tab {
+        padding: 9px 6px;
+        font-size: 11.5px;
+    }
+
+    .merchant-box {
+        padding: 10px 14px;
+    }
+
+    .m-num {
+        font-size: 16px;
+    }
+
+    .btn-pay-now {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    /* Step 4: Voucher Responsive */
+    .voucher-card {
+        padding: 20px 16px;
+    }
+
+    .voucher-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 14px;
+        margin-bottom: 16px;
+    }
+
     .voucher-grid {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+
+    .confirmation-cta-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .confirmation-cta-actions .btn-step {
+        width: 100%;
+    }
+}
+
+/* ---------- Extra Small Devices (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+    .booking-nav-container {
+        padding: 10px 12px;
+    }
+
+    .logo-name {
+        font-size: 15px;
+    }
+
+    .logo-tagline {
+        display: none;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .header-link {
+        padding: 6px 10px;
+        font-size: 11.5px;
+        gap: 5px;
+    }
+
+    .booking-main {
+        padding: 18px 10px 50px;
+    }
+
+    .booking-title {
+        font-size: 24px;
+    }
+
+    .booking-card {
+        padding: 18px 12px;
+        border-radius: 12px;
+    }
+
+    .stepper-wrapper {
+        padding: 10px 10px;
+    }
+
+    .stepper-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .stepper-line {
+        margin: 0 4px;
+    }
+
+    .step-header h2 {
+        font-size: 18px;
+    }
+
+    .avail-val {
+        font-size: 18px;
+    }
+
+    .r-top h3 {
+        font-size: 17px;
+    }
+
+    .r-price {
+        font-size: 21px;
+    }
+
+    .r-bed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .merchant-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .btn-copy {
+        width: 100%;
+        text-align: center;
+        padding: 6px;
+    }
+
+    .success-icon-ring {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .success-title {
+        font-size: 24px;
     }
 }
